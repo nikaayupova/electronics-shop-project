@@ -39,7 +39,14 @@ class Item:
     def instantiate_from_csv(cls):
         cls.all = []
         with open(cls.items_csv_path, 'r', encoding='utf8') as csv:
-            return DictReader(csv)
+            data = DictReader(csv)
+            for item in data:
+                cls(
+                    name=item['name'],
+                    price=cls.string_to_number(item['price']),
+                    quantity=cls.string_to_number(item['quantity'])
+                )
+
 
     @staticmethod
     def string_to_number(decimal_string):
