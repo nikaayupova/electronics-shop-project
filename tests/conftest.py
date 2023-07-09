@@ -11,4 +11,6 @@ def item():
 def item():
     item = Item('Телефон', 10000, 5)
 
+def item():
+    item1 = Item("Смартфон", 10000, 20)
 
